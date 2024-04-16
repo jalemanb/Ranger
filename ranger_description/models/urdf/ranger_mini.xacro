@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+
+<robot name="ranger_mini_v2" 
+    xmlns:xacro="http://ros.org/wiki/xacro">
+
+    <!-- Robot Description Definition -->
+    <xacro:include filename="$(find ranger_description)/models/urdf/ranger_description.xacro" />
+
+    <!-- Robot Gazebo Simulation Attributes -->
+    <xacro:include filename="$(find ranger_description)/models/urdf/ranger_gazebo.xacro" />
+
+    <!-- Variables -->
+    <xacro:property name="M_PI" value="3.14159"/>
+
+    <!-- Vehicle Geometries -->
+    <xacro:property name="base_x_size" value="1.0" />
+    <xacro:property name="base_y_size" value="0.380000" />
+    <xacro:property name="base_z_size" value="0.210000" />
+
+    <xacro:property name="wheelbase" value="0.498" />
+    <xacro:property name="track" value="0.58306" />
+    <xacro:property name="wheel_vertical_offset" value="-0.0702" />
+
+    <xacro:property name="wheel_length" value="1.1653e-01" />
+    <xacro:property name="wheel_radius" value="1.6459e-01" />
+
+    <!-- Robot Description Addition -->
+    <xacro:ranger_description/>
+
+    <!-- Robot Simulation Gazebo Attributes -->
+    <xacro:ranger_gazebo/>
+
+</robot>

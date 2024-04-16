@@ -1,0 +1,486 @@
+<sdf version='1.11'>
+  <model name='ranger_mini_v2'>
+    <link name='base_link'>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>10</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_link_collision'>
+        <pose>0 0 -0.10000000000000001 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.5 0.34999999999999998 0.20000000000000001</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='base_link_visual'>
+        <pose>0 0 0 1.5700000000000001 4.3368086899420177e-19 3.1400000000000001</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ranger_description/models/meshes/ranger_base.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='fl_steering_wheel' type='revolute'>
+      <pose relative_to='base_link'>0.23000000000000001 0.20599999999999999 -0.10000000000000001 0 0 0</pose>
+      <parent>base_link</parent>
+      <child>fl_steering_wheel_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-2.1000000000000001</lower>
+          <upper>2.1000000000000001</upper>
+          <effort>5</effort>
+          <velocity>6.2800000000000002</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='fl_steering_wheel_link'>
+      <pose relative_to='fl_steering_wheel'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>0.01</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.01</iyy>
+          <iyz>0</iyz>
+          <izz>0.01</izz>
+        </inertia>
+      </inertial>
+      <collision name='fl_steering_wheel_link_collision'>
+        <pose>0 0 0.0080000000000000002 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.001</length>
+            <radius>0.001</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name='fl_steering_wheel_link_collision_1'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.001</length>
+            <radius>0.001</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='fl_steering_wheel_link_visual'>
+        <pose>-0.23000000000000001 -0.19400000000000001 0.10000000000000001 1.5700000000000001 4.3368086899420177e-19 3.1400000000000001</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ranger_description/models/meshes/fl.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='fl_wheel' type='revolute'>
+      <pose relative_to='fl_steering_wheel_link'>0 0 -0.12 0 0 0</pose>
+      <parent>fl_steering_wheel_link</parent>
+      <child>fl_wheel_link</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='fl_wheel_link'>
+      <pose relative_to='fl_wheel'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>8</mass>
+        <inertia>
+          <ixx>0.1171</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.1361</iyy>
+          <iyz>0</iyz>
+          <izz>0.1171</izz>
+        </inertia>
+      </inertial>
+      <collision name='fl_wheel_link_collision'>
+        <pose>0 0 0 1.5700000000000001 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.080000000000000002</length>
+            <radius>0.080000000000000002</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='fl_wheel_link_visual'>
+        <pose>0 0 0 1.5700000000000001 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.01</length>
+            <radius>0.01</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='fr_steering_wheel' type='revolute'>
+      <pose relative_to='base_link'>0.23000000000000001 -0.20599999999999999 -0.10000000000000001 0 0 0</pose>
+      <parent>base_link</parent>
+      <child>fr_steering_wheel_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-2.1000000000000001</lower>
+          <upper>2.1000000000000001</upper>
+          <effort>5</effort>
+          <velocity>6.2800000000000002</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='fr_steering_wheel_link'>
+      <pose relative_to='fr_steering_wheel'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>0.01</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.01</iyy>
+          <iyz>0</iyz>
+          <izz>0.01</izz>
+        </inertia>
+      </inertial>
+      <collision name='fr_steering_wheel_link_collision'>
+        <pose>0 0 0.0080000000000000002 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.001</length>
+            <radius>0.001</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='fr_steering_wheel_link_visual'>
+        <pose>-0.23000000000000001 0.19400000000000001 0.10000000000000001 1.5700000000000001 4.3368086899420177e-19 3.1400000000000001</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ranger_description/models/meshes/fr.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='fr_wheel' type='revolute'>
+      <pose relative_to='fr_steering_wheel_link'>0 0 -0.12 0 0 0</pose>
+      <parent>fr_steering_wheel_link</parent>
+      <child>fr_wheel_link</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='fr_wheel_link'>
+      <pose relative_to='fr_wheel'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>8</mass>
+        <inertia>
+          <ixx>0.1171</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.1361</iyy>
+          <iyz>0</iyz>
+          <izz>0.1171</izz>
+        </inertia>
+      </inertial>
+      <collision name='fr_wheel_link_collision'>
+        <pose>0 0 0 1.5700000000000001 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.08</length>
+            <radius>0.08</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='fr_wheel_link_visual'>
+        <pose>0 0 0 1.5700000000000001 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.01</length>
+            <radius>0.01</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='rl_steering_wheel' type='revolute'>
+      <pose relative_to='base_link'>-0.23000000000000001 0.20599999999999999 -0.10000000000000001 0 0 0</pose>
+      <parent>base_link</parent>
+      <child>rl_steering_wheel_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-2.1000000000000001</lower>
+          <upper>2.1000000000000001</upper>
+          <effort>5</effort>
+          <velocity>6.2800000000000002</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='rl_steering_wheel_link'>
+      <pose relative_to='rl_steering_wheel'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>0.01</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.01</iyy>
+          <iyz>0</iyz>
+          <izz>0.01</izz>
+        </inertia>
+      </inertial>
+      <collision name='rl_steering_wheel_link_collision'>
+        <pose>0 0 0.0080000000000000002 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.001</length>
+            <radius>0.001</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='rl_steering_wheel_link_visual'>
+        <pose>-0.23000000000000001 -0.19400000000000001 0.10000000000000001 1.5700000000000001 4.3368086899420177e-19 3.1400000000000001</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ranger_description/models/meshes/fl.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='rl_wheel' type='revolute'>
+      <pose relative_to='rl_steering_wheel_link'>0 0 -0.12 0 0 0</pose>
+      <parent>rl_steering_wheel_link</parent>
+      <child>rl_wheel_link</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='rl_wheel_link'>
+      <pose relative_to='rl_wheel'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>8</mass>
+        <inertia>
+          <ixx>0.1171</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.1361</iyy>
+          <iyz>0</iyz>
+          <izz>0.1171</izz>
+        </inertia>
+      </inertial>
+      <collision name='rl_wheel_link_collision'>
+        <pose>0 0 0 1.5700000000000001 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.080000000000000002</length>
+            <radius>0.080000000000000002</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='rl_wheel_link_visual'>
+        <pose>0 0 0 1.5700000000000001 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.01</length>
+            <radius>0.01</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='rr_steering_wheel' type='revolute'>
+      <pose relative_to='base_link'>-0.23000000000000001 -0.20599999999999999 -0.10000000000000001 0 0 0</pose>
+      <parent>base_link</parent>
+      <child>rr_steering_wheel_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-2.1000000000000001</lower>
+          <upper>2.1000000000000001</upper>
+          <effort>5</effort>
+          <velocity>6.2800000000000002</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='rr_steering_wheel_link'>
+      <pose relative_to='rr_steering_wheel'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>0.01</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.01</iyy>
+          <iyz>0</iyz>
+          <izz>0.01</izz>
+        </inertia>
+      </inertial>
+      <collision name='rr_steering_wheel_link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.001</length>
+            <radius>0.001</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='rr_steering_wheel_link_visual'>
+        <pose>-0.23000000000000001 0.19400000000000001 0.10000000000000001 1.5700000000000001 4.3368086899420177e-19 3.1400000000000001</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://ranger_description/models/meshes/fr.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='rr_wheel' type='revolute'>
+      <pose relative_to='rr_steering_wheel_link'>0 0 -0.12 0 0 0</pose>
+      <parent>rr_steering_wheel_link</parent>
+      <child>rr_wheel_link</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='rr_wheel_link'>
+      <pose relative_to='rr_wheel'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>8</mass>
+        <inertia>
+          <ixx>0.1171</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.1361</iyy>
+          <iyz>0</iyz>
+          <izz>0.1171</izz>
+        </inertia>
+      </inertial>
+      <collision name='rr_wheel_link_collision'>
+        <pose>0 0 0 1.5700000000000001 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.080000000000000002</length>
+            <radius>0.080000000000000002</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='rr_wheel_link_visual'>
+        <pose>0 0 0 1.5700000000000001 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.01</length>
+            <radius>0.01</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+
+    <plugin filename="gz-sim-joint-state-publisher-system"
+        name="gz::sim::systems::JointStatePublisher">
+        <topic>joint_states</topic> <!--from <ros><remapping> -->
+        <joint_name>fl_steering_wheel</joint_name>
+        <joint_name>fl_wheel</joint_name>
+        <joint_name>rl_steering_wheel</joint_name>
+        <joint_name>rl_wheel</joint_name>
+        <joint_name>fr_steering_wheel</joint_name>
+        <joint_name>fr_wheel</joint_name>
+        <joint_name>rr_steering_wheel</joint_name>
+        <joint_name>rr_wheel</joint_name>
+    </plugin>
+
+    <plugin filename="Synchro"
+        name="gz::sim::v8::systems::Synchro">
+        
+        <wheel_base>0.460,</wheel_base>
+        <wheel_radius>0.08</wheel_radius>
+        <track> 0.412 </track>
+
+        <frame_id>odom</frame_id>
+        <child_frame_id>base_link</child_frame_id>
+
+        <p_gain_steering>1.2</p_gain_steering>
+        <p_gain_vel>0.8</p_gain_vel>
+
+        <xyz_offset>0.0 0.0 0.3</xyz_offset>
+        <rpy_offset>0.0 0.0 0.0</rpy_offset>
+
+        <gt_odom>true</gt_odom>
+
+        <fl_traction_joint>fl_wheel</fl_traction_joint>
+        <rl_traction_joint>rl_wheel</rl_traction_joint>
+        <fr_traction_joint>fr_wheel</fr_traction_joint>
+        <rr_traction_joint>rr_wheel</rr_traction_joint>
+        <fl_steering_joint>fl_steering_wheel</fl_steering_joint>
+        <rl_steering_joint>rl_steering_wheel</rl_steering_joint>
+        <fr_steering_joint>fr_steering_wheel</fr_steering_joint>
+        <rr_steering_joint>rr_steering_wheel</rr_steering_joint>
+    </plugin>
+
+  </model>
+</sdf>

@@ -1,0 +1,38 @@
+    <link name='lidar_link'>
+      <pose relative_to='lidar_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.830</mass>
+        <inertia>
+          <ixx>0.000909</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.000909</iyy>
+          <iyz>0</iyz>
+          <izz>0.001107</izz>
+        </inertia>
+      </inertial>
+      <collision name='lidar_link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.0717</length>
+            <radius>0.05165</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='lidar_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.0717</length>
+            <radius>0.05165</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='lidar_joint' type='fixed'>
+      <pose relative_to='base_link'>0 0 0.3 0 0 0</pose>
+      <parent>base_link</parent>
+      <child>lidar_link</child>
+    </joint>
