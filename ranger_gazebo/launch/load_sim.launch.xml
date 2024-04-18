@@ -3,10 +3,10 @@
     <!-- Loading the Gazebo World-->
     <include file="$(find-pkg-share ranger_gazebo)/launch/load_world.launch.py"/>
 
+    <!-- Loading the Ranger Robot Description-->
+    <include file="$(find-pkg-share ranger_description)/launch/load_description.launch.py"/>
+
     <!-- Spawn Robot in Gazebo-->
     <include file="$(find-pkg-share ranger_gazebo)/launch/spawn_robot.launch.py"/>
-
-    <!-- Loading the Ranger Robot Description-->
-    <include file="$(find-pkg-share ranger_description)/launch/display_viz.launch.py"/>
     
 </launch>

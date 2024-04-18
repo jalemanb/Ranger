@@ -5,6 +5,8 @@ Panels:
     Property Tree Widget:
       Expanded:
         - /TF1/Frames1
+        - /Odometry1/Shape1
+        - /LaserScan1/Topic1
       Splitter Ratio: 0.5
     Tree Height: 375
   - Class: rviz_common/Views
@@ -51,10 +53,6 @@ Visualization Manager:
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
-        base_footprint:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
         base_link:
           Alpha: 1
           Show Axes: false
@@ -118,8 +116,6 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: true
-        base_footprint:
-          Value: true
         base_link:
           Value: true
         fl_steering_wheel_link:
@@ -131,6 +127,8 @@ Visualization Manager:
         fr_wheel_link:
           Value: true
         lidar_link:
+          Value: true
+        odom:
           Value: true
         rl_steering_wheel_link:
           Value: true
@@ -146,29 +144,101 @@ Visualization Manager:
       Show Axes: true
       Show Names: false
       Tree:
-        base_link:
-          base_footprint:
-            {}
-          fl_steering_wheel_link:
-            fl_wheel_link:
+        odom:
+          base_link:
+            fl_steering_wheel_link:
+              fl_wheel_link:
+                {}
+            fr_steering_wheel_link:
+              fr_wheel_link:
+                {}
+            lidar_link:
               {}
-          fr_steering_wheel_link:
-            fr_wheel_link:
-              {}
-          lidar_link:
-            {}
-          rl_steering_wheel_link:
-            rl_wheel_link:
-              {}
-          rr_steering_wheel_link:
-            rr_wheel_link:
-              {}
+            rl_steering_wheel_link:
+              rl_wheel_link:
+                {}
+            rr_steering_wheel_link:
+              rr_wheel_link:
+                {}
       Update Interval: 0
+      Value: true
+    - Angle Tolerance: 0.10000000149011612
+      Class: rviz_default_plugins/Odometry
+      Covariance:
+        Orientation:
+          Alpha: 0.5
+          Color: 255; 255; 127
+          Color Style: Unique
+          Frame: Local
+          Offset: 1
+          Scale: 1
+          Value: true
+        Position:
+          Alpha: 0.30000001192092896
+          Color: 204; 51; 204
+          Scale: 1
+          Value: true
+        Value: false
+      Enabled: true
+      Keep: 100
+      Name: Odometry
+      Position Tolerance: 0.10000000149011612
+      Shape:
+        Alpha: 0.699999988079071
+        Axes Length: 1
+        Axes Radius: 0.10000000149011612
+        Color: 28; 113; 216
+        Head Length: 0.20000000298023224
+        Head Radius: 0.20000000298023224
+        Shaft Length: 0.44999998807907104
+        Shaft Radius: 0.10000000149011612
+        Value: Arrow
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        Filter size: 10
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /ranger/odom
+      Value: true
+    - Alpha: 1
+      Autocompute Intensity Bounds: true
+      Autocompute Value Bounds:
+        Max Value: 10
+        Min Value: -10
+        Value: true
+      Axis: Z
+      Channel Name: intensity
+      Class: rviz_default_plugins/LaserScan
+      Color: 255; 255; 255
+      Color Transformer: Intensity
+      Decay Time: 0
+      Enabled: true
+      Invert Rainbow: false
+      Max Color: 255; 255; 255
+      Max Intensity: 0
+      Min Color: 0; 0; 0
+      Min Intensity: 0
+      Name: LaserScan
+      Position Transformer: XYZ
+      Selectable: true
+      Size (Pixels): 3
+      Size (m): 0.10000000149011612
+      Style: Points
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        Filter size: 10
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /scan
+      Use Fixed Frame: true
+      Use rainbow: true
       Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
-    Fixed Frame: base_link
+    Fixed Frame: odom
     Frame Rate: 30
   Name: root
   Tools:
@@ -180,25 +250,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz_default_plugins/Orbit
-      Distance: 2.2726850509643555
+      Distance: 24.046306610107422
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0.6881388425827026
-        Y: 0.23704814910888672
-        Z: 0.15380829572677612
+        X: 0.69658362865448
+        Y: -0.045650895684957504
+        Z: 0
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.3247961103916168
+      Pitch: 0.6147962212562561
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz_default_plugins)
-      Yaw: 0.3742060661315918
+      Yaw: 1.3042067289352417
     Saved: ~
 Window Geometry:
   Displays:

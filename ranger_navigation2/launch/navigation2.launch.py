@@ -25,12 +25,10 @@ from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
 
-
-
 def generate_launch_description():
     pkg_name = 'ranger_navigation2'
-    use_rviz = LaunchConfiguration('use_rviz', default='true')
-    use_sim_time = LaunchConfiguration('use_sim_time', default='true')
+    use_rviz = LaunchConfiguration('use_rviz', default='false')
+    use_sim_time = LaunchConfiguration('use_sim_time', default='false')
     map_dir = LaunchConfiguration(
         'map',
         default=os.path.join(
@@ -55,7 +53,7 @@ def generate_launch_description():
 
     return LaunchDescription([
         DeclareLaunchArgument(
-            'maps',
+            'map',
             default_value=map_dir,
             description='Full path to map file to load'),
 

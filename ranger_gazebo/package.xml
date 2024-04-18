@@ -3,12 +3,13 @@
 <package format="3">
   <name>ranger_gazebo</name>
   <version>0.0.0</version>
-  <description>Gazebo-specific implementations for the ros_gz_example project</description>
-  <maintainer email="jalemangallegos@techfakuni-bielefeld.de">Jesus Enrique Aleman Gallegos</maintainer>
+  <description>Gazebo-specific implementations for the Ranger Agilex V2</description>
+  <maintainer email="jalemangallegos@techfak.uni-bielefeld.de">Jesus Enrique Aleman Gallegos</maintainer>
   <license>Apache 2.0</license>
   <author>Jesus Enrique Aleman Gallegos</author>
 
   <depend>ros_gz_example_description</depend>
+  <depend>ranger_description</depend>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 

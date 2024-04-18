@@ -6,7 +6,7 @@
   <description>
     ROS 2 launch scripts for cartographer customized for the Agilex Ranger Mini V2
   </description>
-  <maintainer email="jesus.aleman@uni-bielefeld.de">Jesus Enrique Aleman Gallegos</maintainer>
+  <maintainer email="jalemangallegos@techfak.uni-bielefeld.de">Jesus Enrique Aleman Gallegos</maintainer>
   <license>Apache 2.0</license>
   <buildtool_depend>ament_cmake</buildtool_depend>
   <exec_depend>cartographer_ros</exec_depend>

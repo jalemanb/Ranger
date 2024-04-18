@@ -4,6 +4,8 @@
 <!-- |    EDITING THIS FILE BY HAND IS NOT RECOMMENDED                                 | -->
 <!-- =================================================================================== -->
 <robot name="ranger_mini_v2">
+  <!-- Robot Footprint -->
+  <link name="base_footprint"/>
   <!-- Base link -->
   <link name="base_link">
     <inertial>
@@ -24,6 +26,11 @@
       </geometry>
     </collision>
   </link>
+  <joint name="base_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="base_footprint"/>
+    <origin xyz="0.0 0.0 -0.3" rpy="0 0 0"/>
+  </joint>
   <link name="fl_steering_wheel_link">
     <inertial>
       <origin xyz="0.0 0.0 0.0"/>
