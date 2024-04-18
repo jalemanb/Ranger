@@ -36,7 +36,7 @@ def generate_launch_description():
             'maps',
             'map.yaml'))
 
-    param_file_name = 'ranger_sim.yaml'
+    param_file_name = 'ranger_simDWB_NavFn.yaml'
     param_dir = LaunchConfiguration(
         'params_file',
         default=os.path.join(
@@ -47,9 +47,9 @@ def generate_launch_description():
     nav2_launch_file_dir = os.path.join(get_package_share_directory('nav2_bringup'), 'launch')
 
     rviz_config_dir = os.path.join(
-        get_package_share_directory('nav2_bringup'),
+        get_package_share_directory(pkg_name),
         'rviz',
-        'nav2_default_view.rviz')
+        'ranger_navigation2.rviz')
 
     return LaunchDescription([
         DeclareLaunchArgument(

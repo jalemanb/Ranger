@@ -1,0 +1,12 @@
+<launch>
+
+    <!-- Loading the Gazebo Simulation Environment + Robot Model-->
+    <include file="$(find-pkg-share ranger_gazebo)/launch/load_sim.launch.xml"/>
+
+    <!-- Launching nav2 stack for the simulated Ranger Mini V2 -->
+    <include file="$(find-pkg-share ranger_navigation2)/launch/navigation2.launch.py">
+        <arg name="use_sim_time" value="true"/>
+        <arg name="use_rviz" value="true"/>
+    </include>
+    
+</launch>
